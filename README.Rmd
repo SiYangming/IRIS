@@ -65,7 +65,7 @@ packages <- c(
     "Rcpp", "Hmisc", "ggplot2", "locfit", "GGally", "pheatmap",
     "reshape2", "backports", "digest", "fields", "psych", "stringr",
     "tools", "openxlsx", "Rtsne", "WGCNA", "flashClust", "parallel",
-    "MCL", "kmed", "ape"
+    "MCL", "kmed", "ape", "anocva"
 )
 np <- packages[!(packages %in% installed.packages()[, "Package"])]
 if(length(np)) install.packages(np)
@@ -92,8 +92,10 @@ clustering algorithm. Run this code to get the GitHub package:
 
 ```{r, eval=FALSE, message=FALSE}
 # GitHub
-if (!require("devtools")) install.packages("devtools")
-devtools::install_github("OSU-BMBL/BRIC", force = T)
+#if (!require("devtools")) install.packages("devtools")
+#devtools::install_github("OSU-BMBL/BRIC", force = T)
+install.packages("https://github.com/SiYangming/BRIC/releases/download/v1.0/BRIC_1.0.tar.gz", 
+                 repos=NULL, type="source")
 ```
 
 ### Run the Shiny application
