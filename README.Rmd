@@ -83,7 +83,7 @@ bioc_packages <- c(
 )
 np <- bioc_packages[!(bioc_packages %in% installed.packages()[,"Package"])]
 if (!require("BiocManager")) install.packages("BiocManager")
-BiocManager::install(np)
+if(length(np)) BiocManager::install(np)
 ```
 
 ### Install Developmental packages
